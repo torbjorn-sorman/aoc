@@ -50,11 +50,13 @@ def run(input_content: str, part_1: bool, part_2: bool, example: bool, day: str)
 
     if part_1:
         print('## Part 1')
-        print(sum(page[int(len(page) / 2)] for page in pages if check_ok(order, page)))
+        print(sum(page[int(len(page) / 2)]
+              for page in pages if check_ok(order, page)))
 
     if part_2:
         print('## Part 2')
-        print(sum(reorder(order, page) for page in pages if not check_ok(order, page)))
+        print(sum(reorder(order, page)
+              for page in pages if not check_ok(order, page)))
 
 
 def check_ok(order: Dict[str, str], page: List[List[str]]) -> bool:
@@ -64,7 +66,7 @@ def check_ok(order: Dict[str, str], page: List[List[str]]) -> bool:
     return True
 
 
-def reorder(order:Dict[str, str], page: List[List[str]]) -> int:
+def reorder(order: Dict[str, str], page: List[List[str]]) -> int:
     for idx, num in enumerate(page):
         if num in order:
             for i, p in enumerate(page[:idx]):

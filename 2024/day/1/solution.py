@@ -1,4 +1,3 @@
-import math
 import collections
 
 inline_example = '''3   4

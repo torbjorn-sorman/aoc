@@ -8,14 +8,10 @@ inline_example = '''7 6 4 2 1
 1 3 6 7 9'''
 
 
-def cp_list(report, index):
-    return [x for idx, x in enumerate(report) if idx != index]
-
-
 def try_damp(report: List[int], damp: bool):
     if damp:
         for index in range(len(report)):
-            if is_safe(cp_list(report, index), False):
+            if is_safe([x for idx, x in enumerate(report) if idx != index], False):
                 return True
     return False
 

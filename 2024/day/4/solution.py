@@ -33,7 +33,6 @@ def run(input_content: str, part_1: bool, part_2: bool, example: bool, day: str)
         for y in range(1, rows - 1):
             for x in range(1, cols - 1):
                 if haystack[y][x] == 'A' and check_x_mas(haystack, y, x):
-                    print(x, y)
                     count += 1
         print(count)
         # 1991 is too high
